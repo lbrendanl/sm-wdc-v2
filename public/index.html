@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tableau Web Data Connector for Survey Monkey</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/sortable.css" />
+
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/js.cookie.min.js"></script>
+    <script type="text/javascript" src="/js/moment.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/sortable.js"></script>
+    <script type="text/javascript" src="/js/underscore.js"></script>
+    <!--  In order to use promises, like this example, you will need to include this polyfill to add promises
+          functionality to the built in Tableau WDC browser (it does not have ES6 functionality by default)    -->
+    <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+    
+    <script type="text/javascript" src="https://connectors.tableau.com/libs/tableauwdc-2.0.7.js"></script>
+    <script type="text/javascript" src="/js/smWDC.js"></script>
+  </head>
+  <body>
+    <div class="container container-table">
+      <h3>Survey Monkey Web Data Connector</h3>
+        <p id="signedin">You are signed in!</p>
+        <p id="notsignedin">You are not signed in, please click below to authenticate:</p>
+        <br />
+        <button type = "button" id = "login" class = "btn btn-primary" style = "margin-top: 10px;">Sign in to SurveyMonkey</button>
+
+        <hr>
+        <p id="surveyLabel">Please Select a Survey to Import:</p>
+        <input id="search" type="text" class="longSearch search-query form-control" placeholder="Search by title of survey" />
+        <div id="tableWrapDiv" class="tableWrapper">
+          <table id="surveyTable" class="table table-striped" data-sortable>
+            <thead>
+              <tr>
+                <th id="titleHeader">Survey Title</th>
+                <th id="dateHeader" data-sorted="true" data-sorted-direction="descending" data-sortable-type="date">Date Last Modified</th>
+                <th id="titleHeader">Survey ID</th>
+              </tr>
+            </thead>
+            <tbody>
+                <!-- loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      <button type = "button" id = "getDataButton" class = "btn btn-primary" style = "margin-top: 10px;">Get Data</button>
+    </div>
+  </body>
+</html>

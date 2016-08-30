@@ -1,0 +1,33 @@
+{
+    "tables" : [
+        {
+            "alias": "Questions",
+            "id": "questions",
+            "columns": [
+                { "id": "ID", "dataType": "int" },
+                { "id": "Text", "dataType": "string" }
+            ]
+        },
+        {
+            "alias": "Respondents",
+            "id": "respondents",
+            "columns": [
+                { "id": "ID", "dataType": "int" },
+                { "id": "DateModified", "dataType": "date" }
+            ]
+        },
+        {
+            "alias": "Answers",
+            "id": "answers",
+            "columns": [
+                { "id": "ID", "dataType": "int" },
+                { "id": "QID", "dataType": "int" },
+                { "id": "RID", "dataType": "int" },
+                { "id": "RowID", "dataType": "int" },
+                { "id": "ChoiceID", "dataType": "int" },
+                { "id": "Text", "dataType": "string" },
+                { "id": "FreeformText", "dataType": "string"}
+            ]
+        }
+    ]
+}

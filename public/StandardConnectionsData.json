@@ -1,0 +1,38 @@
+{
+  "connections" : [
+    {
+      "alias" : "Survey Data",
+      "tables" : [
+        { "id"    : "answers",
+          "alias" : "Answers"     },
+        { "id"    : "questions",
+          "alias" : "Questions"    },
+        { "id"    : "respondents",
+          "alias" : "Respondents"    }
+      ],
+      "joins" : [
+        {
+          "left" : {
+            "tableAlias" : "Answers",
+            "columnId"   : "QID"
+          },
+          "right" : {
+            "tableAlias" : "Questions",
+            "columnId"   : "ID"
+          },
+          "joinType" : "inner"
+        },{
+          "left" : {
+            "tableAlias" : "Answers",
+            "columnId"   : "RID"
+          },
+          "right" : {
+            "tableAlias" : "Respondents",
+            "columnId"   : "ID"
+          },
+          "joinType" : "inner"
+        }
+      ]
+    }
+  ]
+}
